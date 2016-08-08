@@ -126,5 +126,9 @@ ENV/
 
 # mine configuration
 .gitingore
+*.rar
+*~
+*.zip
+
 
 
