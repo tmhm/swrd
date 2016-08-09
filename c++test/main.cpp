@@ -43,6 +43,7 @@ int main(){
     cout << sizeof(bu) << endl;
     std::cout << sizeof(test) << std::endl;
 
+    cout << sizeof(long) << endl;
     int ret = sizeof(test1);
     printf("out : %d \n\n", ret);
     return 0;
