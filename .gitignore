@@ -124,8 +124,9 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# mine configuration
-.gitingore
+# mine configuration ============
+# https://github.com/github/gitignore
+#.gitingore
 *.rar
 *~
 *.zip
@@ -133,5 +134,7 @@ ipython_notebook/data/
 ipython_notebook/result_analysis/
 data/
 result_analysis/
+notes/
+
 
 
