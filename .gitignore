@@ -129,6 +129,9 @@ ENV/
 *.rar
 *~
 *.zip
-
+ipython_notebook/data/
+ipython_notebook/result_analysis/
+data/
+result_analysis/
 
 
