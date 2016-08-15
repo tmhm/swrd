@@ -124,7 +124,7 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# mine configuration ============
+# my configuration ============
 # https://github.com/github/gitignore
 #.gitingore
 *.rar
