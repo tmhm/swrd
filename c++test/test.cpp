@@ -7,6 +7,12 @@ typedef struct{
 
 }test_null;
 
+class null_class{
+    null_class();
+    ~null_class();
+    virtual void test()=0;
+};
+
 typedef struct{
 	double d1;
 	char c1;
@@ -30,7 +36,7 @@ typedef struct{
 	short s1;
 	char ch2;
 	int i1;
-}testint2; 
+}testint2;
 class BU{
      int number;
      union UBffer{
@@ -129,6 +135,8 @@ int main(int argc, char** argv) {
 	int ctc_2 = sizeof(E);
 
 	cout << "test null struct: " << sizeof(test_null) << endl;
+
+	cout << "test null class: " << sizeof(null_class) << endl;
 	cout << "sizeof(bu): " << sizeof(bu) << endl;
 	cout << "sizeof(testdouble):" << sizeof(testdouble) << endl;
 	cout << "sizeof(testint):" << sizeof(testint) << endl;
