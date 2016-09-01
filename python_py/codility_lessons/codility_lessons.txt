@@ -1,9 +1,9 @@
-ÇĞ¼ÇÁÙ½çµã£¬ ±ÈÈçÒ»¸ö×îĞ¡£¬×î´óµÄÖµ£¬ len(0), max() ÎŞÊı¾İµÈ
+åˆ‡è®°ä¸´ç•Œç‚¹ï¼Œ æ¯”å¦‚ä¸€ä¸ªæœ€å°ï¼Œæœ€å¤§çš„å€¼ï¼Œ len(0), max() æ— æ•°æ®ç­‰
 =======================================
-×ĞÏ¸¿´ºÃÌâÒâ£¬ ±ÈÈçÊÇÒªÇó´Ó1 ¿ªÊ¼µÄlist £¬¾Í²»ĞèÒª¼Ç×îºÃµÄÖµ£¬Çó³¤¶ÈÁË£¬Ö»Òª¼ÇÏÂ×î´óÖµ¡£
+ä»”ç»†çœ‹å¥½é¢˜æ„ï¼Œ æ¯”å¦‚æ˜¯è¦æ±‚ä»1 å¼€å§‹çš„list ï¼Œå°±ä¸éœ€è¦è®°æœ€å¥½çš„å€¼ï¼Œæ±‚é•¿åº¦äº†ï¼Œåªè¦è®°ä¸‹æœ€å¤§å€¼ã€‚
 
 
-lesson 1£º
+lesson 1ï¼š
 
 ========Iterations========
 @BinaryGap------
@@ -34,7 +34,7 @@ def solution(N):
     return max([len(l) for l in strb[1:-1]])
 
 ======Arrays=======
-lessons 2£º
+lessons 2ï¼š
 @  CyclicRotation-------
 [100%] CyclicRotation
 
@@ -177,8 +177,8 @@ def solution(X, A):
 @[100%] PermCheck
 VIEW START
 Check whether array A is a permutation.
-×ĞÏ¸¿´ºÃÌâÒâ£¬ ±ÈÈçÊÇÒªÇó´Ó1 ¿ªÊ¼µÄlist £¬
-¾Í²»ĞèÒª¼Ç×îºÃµÄÖµ£¬Çó³¤¶ÈÁË£¬Ö»Òª¼ÇÏÂ×î´óÖµ¡£
+ä»”ç»†çœ‹å¥½é¢˜æ„ï¼Œ æ¯”å¦‚æ˜¯è¦æ±‚ä»1 å¼€å§‹çš„list ï¼Œ
+å°±ä¸éœ€è¦è®°æœ€å¥½çš„å€¼ï¼Œæ±‚é•¿åº¦äº†ï¼Œåªè¦è®°ä¸‹æœ€å¤§å€¼ã€‚
 def solution(A):
     # write your code in Python 2.7
     #A.sort() # Nlog(N)
@@ -206,7 +206,7 @@ def solution(A):
 VIEW START
 Find the minimal positive integer not occurring in a given sequence.
 
-¿¼ÂÇµ½²»ÄÜÅÅĞò£¬ ·µ»Ø½âÒ»¶¨»áÔÚ1~len(Ëù¸øÊı×é)+1µÄÇø¼ä¡£ÓÃmap¼ÇÂ¼ÕâĞ©Êı¾İÊÇ·ñ¶¼ÔÚ£¬²»ÔÚµÄ»°£¬ÕÒ×îĞ¡µÄ¿ÕÈ±£¬¶¼ÔÚµÄÊ±ºò¾ÍÊÇmap/list×îºóÒ»¸öÊı¼Ó1.
+è€ƒè™‘åˆ°ä¸èƒ½æ’åºï¼Œ è¿”å›è§£ä¸€å®šä¼šåœ¨1~len(æ‰€ç»™æ•°ç»„)+1çš„åŒºé—´ã€‚ç”¨mapè®°å½•è¿™äº›æ•°æ®æ˜¯å¦éƒ½åœ¨ï¼Œä¸åœ¨çš„è¯ï¼Œæ‰¾æœ€å°çš„ç©ºç¼ºï¼Œéƒ½åœ¨çš„æ—¶å€™å°±æ˜¯map/listæœ€åä¸€ä¸ªæ•°åŠ 1.
 
 def solution(A):
     # write your code in Python 2.7
@@ -228,7 +228,7 @@ Calculate the values of counters after applying all alternating operations:
 increase counter by 1; set value of all counters to current maximum.
 
 
-½â·¨Ò»£º
+è§£æ³•ä¸€ï¼š
 ----Detected time complexity:
 O(N*M)
 ----------------
@@ -251,11 +251,11 @@ def solution(N, A):
     return ret
 
 ---
-@ ½â·¨¶ş
+@ è§£æ³•äºŒ
 [100%] MaxCounters
 VIEW START
 Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.
-·Ö±ğ¼ÇÂ¼ÉÏ´ÎupdateµÄÖµ£¬ÔÚupdateµÄ»ù´¡ÉÏ£¬ÔÙ¼ÇÂ¼µ±Ç°×î´óÖµ¡£
+åˆ†åˆ«è®°å½•ä¸Šæ¬¡updateçš„å€¼ï¼Œåœ¨updateçš„åŸºç¡€ä¸Šï¼Œå†è®°å½•å½“å‰æœ€å¤§å€¼ã€‚
 Detected time complexity:
 O(N + M)
 
@@ -350,13 +350,13 @@ def solution(A, B, K):
 
 Find the minimal nucleotide from a range of sequence DNA.
 ----------
-½â·¨Ò»£º
+è§£æ³•ä¸€ï¼š
 Test score 
 37%
 
 def getMinFactor(S,l,i,j):
     if j == (l-1):
-        tmp = set(S[i:-1])  # error £¬should be s[i:]
+        tmp = set(S[i:-1])  # error ï¼Œshould be s[i:]
     else:
         tmp = set(S[i:(j+1)])
     if 'A' in tmp:
@@ -378,7 +378,7 @@ def solution(S, P, Q):
     return result
 
 -------------
-½â·¨¶ş£º
+è§£æ³•äºŒï¼š
 Test score 
 100%
 # used each list to save that states whether has element or not
