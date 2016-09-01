@@ -60,6 +60,10 @@ lesson 1：<i>Iterations</i>
 
 > Find longest sequence of zeros in binary representation of an integer.
 
+A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
+
+For example, number 9 has binary representation 1001 and contains a binary gap of length 2. The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3. The number 20 has binary representation 10100 and contains one binary gap of length 1. The number 15 has binary representation 1111 and has no binary gaps.
+
 
 解题思路：
 
@@ -98,6 +102,7 @@ lesson 2: <i>Arrays</i>
 - exercise:
 - Problem: Given array A consisting of N integers, return the reversed array.
 
+
 ```
 def myreverse(A):
     length = len(A)
@@ -113,6 +118,10 @@ def myreverse(A):
 
 > Rotate an array to the right by a given number of steps.
 
+
+A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is also moved to the first place.
+
+For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7]. The goal is to rotate array A K times; that is, each element of A will be shifted to the right by K indexes.
 
 ```
 def re_enumerate(seq):
@@ -171,6 +180,20 @@ def solution(A, K):
 </h3>
 
 > Find value that occurs in odd number of elements.
+
+A non-empty zero-indexed array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.
+
+For example, in array A such that:
+
+	  A[0] = 9  A[1] = 3  A[2] = 9
+	  A[3] = 3  A[4] = 9  A[5] = 7
+	  A[6] = 9
+  
+- the elements at indexes 0 and 2 have value 9,
+- the elements at indexes 1 and 3 have value 3,
+- the elements at indexes 4 and 6 have value 9,
+- the element at index 5 has value 7 and is unpaired.
+
 
 解题思路：
 
@@ -245,6 +268,14 @@ def sumN(N):
 > Minimize the value 
 |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 
+A non-empty zero-indexed array A consisting of N integers is given. Array A represents numbers on a tape.
+
+Any integer P, such that 0 < P < N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P − 1] and A[P], A[P + 1], ..., A[N − 1].
+
+The difference between the two parts is the value of: |(A[0] + A[1] + ... + A[P − 1]) − (A[P] + A[P + 1] + ... + A[N − 1])|
+
+In other words, it is the absolute difference between the sum of the first part and the sum of the second part.
+
 **note:** 依次求sum
 
 ```
@@ -270,6 +301,11 @@ def solution(A):
 
 >Count minimal number of jumps from position X to Y.
 
+A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.
+
+Count the minimal number of jumps that the small frog must perform to reach its target.
+
+
 **note:** O(1) time complexity, 注意是否在边界上，否则加1即可。
 
 ```
@@ -289,6 +325,10 @@ def solution(X, Y, D):
 
 
 >Find the missing element in a given permutation.
+
+A zero-indexed array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
+
+Your goal is to find that missing element.
 
 **note:**
 
@@ -526,17 +566,19 @@ def solution(A):
 </h3>
 
 
-> Calculate the values of counters after applying all alternating operations: 
-increase counter by 1; set value of all counters to current maximum.
+> Calculate the values of counters after applying all alternating operations:increase counter by 1; set value of all counters to current maximum. 
+
 
 You are given N counters, initially set to 0, and you have two possible operations on them:
 
-increase(X) − counter X is increased by 1,
-max counter − all counters are set to the maximum value of any counter.
+- increase(X) − counter X is increased by 1,
+- max counter − all counters are set to the maximum value of any counter.
+
 A non-empty zero-indexed array A of M integers is given. This array represents consecutive operations:
 
-if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),
-if A[K] = N + 1 then operation K is max counter.
+- if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),
+- if A[K] = N + 1 then operation K is max counter.
+
 For example, given integer N = 5 and array A such that:
 
     A[0] = 3
@@ -561,6 +603,9 @@ The goal is to calculate the value of every counter after all operations.
 #### 解法一：
 
 - Detected time complexity: O(N*M)
+- Test score 66%
+- Correctness 100%	Performance	60% 
+- 计算正确，但是时间复杂度不满足要求。
 
 ```
 def solution(N, A):
@@ -593,7 +638,7 @@ Calculate the values of counters after applying all alternating operations: incr
 **note:**
 
  - 分别记录上次update的值，在update的基础上，再记录当前最大值。
- - 有点文件系统，按需分配的味道， 当出现缺页中断的时候再去分配内存。
+ - 有点类似操作系统的内存管理，按需分配的味道， 当出现缺页中断的时候再去分配内存。
  - 这里是当出现N+1的时候，再去update 上次没有update的元素，并且在最后一次需要再检查一次update
 
 
@@ -609,7 +654,6 @@ def solution(N, A):
     last_update = 0
     tn = N + 1
     for elem in A:
-        
         if elem < tn:
             if ret[elem -1] < last_update:
                 ret[elem -1] = last_update
@@ -626,6 +670,29 @@ def solution(N, A):
     for elem in xrange(N):
         if ret[elem] < last_update:
             ret[elem] = last_update
+    return ret
+```
+
+```
+def solution(N, A):
+    # write your code in Python 2.7
+    tn = N + 1
+    maxOfCounter = 0
+    lastUpdate = 0
+    ret = [0]*N
+    for a in A:
+        if a < tn:
+            if ret[a-1] < lastUpdate :
+                ret[a-1] = lastUpdate
+            ret[a-1] += 1
+            if ret[a-1] > maxOfCounter: 
+                # update max counter
+                maxOfCounter = ret[a-1]
+        else:
+            lastUpdate = maxOfCounter
+    for elem in xrange(N):
+        if ret[elem-1] < lastUpdate:
+            ret[elem-1] = lastUpdate
     return ret
 ```
 
