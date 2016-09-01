@@ -135,6 +135,7 @@ ipython_notebook/result_analysis/
 data/
 result_analysis/
 notes/
+*.DS_Store
 
 
 
