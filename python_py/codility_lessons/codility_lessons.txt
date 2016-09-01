@@ -510,6 +510,9 @@ def solution(A):
         if A[idx]+A[idx + 1] > A[idx + 2]:
             return 1
     return 0
+-------------------------
+@ iNumberOfDiscIntersections
+Compute the number of intersections in a sequence of discs.
 
 
 ======================stacks and queues===================
