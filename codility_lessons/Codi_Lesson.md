@@ -703,27 +703,62 @@ lesson 5: <i>prefix sums</i>
 1. <i> PassingCars</i>
 </h3>
 
-- [100%] 
+
 >
 Count the number of passing cars on the road.
 
-- Detected time complexity:
-O(N)
+A non-empty zero-indexed array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.
+
+Array A contains only 0s and/or 1s:
+
+0 represents a car traveling east,
+1 represents a car traveling west.
+The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 ≤ P < Q < N, is passing when P is traveling to the east and Q is traveling to the west.
+
+For example, consider array A such that:
+
+	  A[0] = 0
+	  A[1] = 1
+	  A[2] = 0
+	  A[3] = 1
+	  A[4] = 1
+  
+We have five pairs of passing cars: (0, 1), (0, 3), (0, 4), (2, 3), (2, 4).
+
+**Assume that:**
+
+- N is an integer within the range [1..100,000];
+- each element of array A is an integer that can have one of the following values: 0, 1.
+
+**Complexity:**
+
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(1), 
+
+思路：
+
+- 可以计算suffix sum的方式
+- 然后，从前面开始遍历list，遇到a ＝ 0，result即加上当前的suffix sum的值
+- 此题元素是0，1，故可以不用保留每一步的计算，题目有要求限制O(1)的space， 也是给出提示，用一个变量retsum值来记录，每一步的prefix sum值，每移动一步，元素是1的话，将retsum 减1， 即是下一个prefix sum 值。
+
+- Detected time complexity: O(N)
+- [100%] 
 
 ```
 def solution(A):
     # write your code in Python 2.7
-    total = sum(A)
-    ret = 0
-    for elem in A:
-        if elem == 0:
-            ret += total
-            if ret > 1000000000:
+    result = 0
+    retsum = sum(A)
+    for a in A:
+        if a == 0:
+            result += retsum
+            if result > 1000000000:
                 return -1
         else:
-            total -= elem
-    return ret
+            retsum -= 1
+    return result
 ```
+
 
 
 <h3 id = "1.5.2"> 
