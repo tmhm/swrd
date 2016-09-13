@@ -1,5 +1,40 @@
 
 
+print "\n ===sort learning!=== \n"
+
+# some tools
+def myLess(a, b):
+    return a < b
+
+def myExch(a,b):
+    a,b = b,a
+
+def isSort(a):
+    length = len(a)
+    for i in xrange(length):
+        if a[i] > a[i+1]:
+            return False
+        return True
+
+
+def selectionSort(a):
+    length = len(a)
+    for i in xrange(length):
+        mintmp = i
+        for j in xrange(i + 1, length):
+            if a[j] < a[mintmp]:
+                mintmp = j
+        a[i], a[mintmp] = a[mintmp], a[i]
+
+def insertionSort(a):
+    length = len(a)
+    for i in xrange(1, length):
+        for j in xrange(i, 0, -1):
+            if a[j] < a[j-1]:
+                a[j], a[j-1] = a[j-1], a[j]
+
+
+
 
 # this fun will been in infinte loop, when partition num is the max or min num
 # e.g. a = [1,2,3,4,5,1,2,3,4,5]
@@ -22,7 +57,7 @@ def quick_sort(a, low, high):
 
 #-------------------------------
 
-def quick_sort_2(a, low, high):
+def quick_sort_3way(a, low, high):
     l,h = low, high
     if l >= h:
         print "test"
@@ -55,8 +90,13 @@ if __name__ == "__main__":
     arr = [random.randint(1,100) for i in xrange(10)]
     print "before sort:", arr
     quick_sort(arr,0,len(arr)-1)
+
+    #selectionSort(arr)
+    #insertionSort(arr)
+    assert isSort(arr),"sort check crashed!\n"
     print "After sort:"
     print arr
+
 
 
 
