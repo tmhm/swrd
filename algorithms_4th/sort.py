@@ -1,5 +1,4 @@
 
-
 print "\n ===sort learning!=== \n"
 
 # some tools
@@ -56,7 +55,6 @@ def quick_sort(a, low, high):
     return a
 
 #-------------------------------
-
 def quick_sort_3way(a, low, high):
     l,h = low, high
     if l >= h:
