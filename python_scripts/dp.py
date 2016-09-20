@@ -17,6 +17,7 @@ def coin_test(N, V):
 		print ("total:%-5s coin num:%5d" %(idx+1,elem))
 
 # solution : LIS --  time O(N^2)
+# Longest increasing subsequence
 def lis_solution_Ns(A, N):
 	tmp = [1]*N
 	retmax = 1
