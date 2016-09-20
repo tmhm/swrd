@@ -1,3 +1,6 @@
+# http://www.hawstein.com/posts/dp-novice-to-advanced.html
+# https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/
+
 def coin_num(N,V):
 	#minNum = [0]*(N+1)
 	minNum = [i for i in xrange(N+1)]
@@ -48,3 +51,11 @@ def lis_solution_Ns2(A, N):
 	print tmp
 	return retmax
 '''
+
+if __name__ == "__main__":
+    coin_value = [1,2,5]
+    coin_test(15, coin_value)
+
+    listA = [5, 3, 4, 8, 6, 7]
+    lis_solution_Ns(listA, len(listA))
+
