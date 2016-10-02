@@ -137,6 +137,7 @@ result_analysis/
 notes/
 *.DS_Store
 .DS_Store
-
+*.swp
+*.out
 
 
