@@ -139,5 +139,6 @@ notes/
 .DS_Store
 *.swp
 *.out
+*.dSYM
 
 
