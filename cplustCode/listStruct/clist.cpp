@@ -46,6 +46,18 @@ void RemoveNode(ListNode** pHead, int value){
 		pToBeDeleted = NULL;
 	}
 }
+
+ListNode* ReverseList(ListNode* pHead){
+	if(pHead == NULL || pHead->m_pNext ==NULL){
+		return pHead;
+	}else{
+		ListNode* newHead = ReverseList(pHead->m_pNext);
+		pHead->m_pNext->m_pNext = pHead;
+		pHead->m_pNext = NULL;
+		return newHead;
+	}
+}
+
 void printList(ListNode* pHead){
 	ListNode* p = pHead;
 	while(p != NULL){
@@ -55,6 +67,8 @@ void printList(ListNode* pHead){
 	}
 	printf("\n");
 }
+
+
 void PrintListReversingly(ListNode* pHead){
 	std::stack<ListNode*> nodes;
 	ListNode* pNode = pHead;
@@ -83,12 +97,18 @@ void PrintListReversingly_recursively(ListNode* pHead){
 
 int main(){
 	ListNode* test = new ListNode();
-	test->m_nValue = 4;
-	AddToTail(&test, 5);	
-	AddToTail(&test, 6);
-	AddToTail(&test, 7);
+	test->m_nValue = 0;
+	int numOfNodeAdd = 10;
+	for(int i = 1; i <= numOfNodeAdd ; ++i){
+		AddToTail(&test, i);	
+	}
+//	AddToTail(&test, 5);	
+//	AddToTail(&test, 6);
+//	AddToTail(&test, 7);
 	printList(test);
-	PrintListReversingly(test);
-	PrintListReversingly_recursively(test);
+	test = ReverseList(test);
+	printList(test);
+//	PrintListReversingly(test);
+//	PrintListReversingly_recursively(test);
 	printf("\n");
 }

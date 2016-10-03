@@ -11,16 +11,16 @@ int myStrLen(const char *str){
 	}
 	return ret;
 }
-char* CharReverse(char* pch,int index, int length){
+void CharReverse(char* pch,int index, int length){
 	if(index < length/2){
 		char tmp = *(pch+index);
 		*(pch + index) = *(pch + length - (index+1));
 		*(pch + length - (index+1)) = tmp;
 		cout << tmp << endl;
-		return CharReverse(pch, ++index, length);
+		CharReverse(pch, ++index, length);
 	}
 	else{
-		return pch;
+		return ;
 	}
 }
 int main(){
