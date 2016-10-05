@@ -13,7 +13,7 @@ bool isPopOrder(const int* pPush, const int* pPop, int length){
 			//当栈顶不是目标元素，再压入余下的元素,直到压到需要pop出去的元素为止。
 			while(stackData.empty() || stackData.top() != *pNextPop){
 				if(pNextPush - pPush == length) break; 
-				stackData.push(pNextPush); // 压栈前，判定是否压完了。
+				stackData.push(*pNextPush); // 压栈前，判定是否压完了。
 				pNextPush++;
 			}
 			// 如果不是pop的元素，则退出，
@@ -35,14 +35,14 @@ int main(){
     	int pop1[nLength] = {4, 5, 3, 2, 1};
 	int pop2[nLength] = {4, 3, 5, 1, 2};
 	if (isPopOrder(ipush, pop1, nLength) == true)
-		fprintf("pop1 Success!");
+		printf("pop1 Success! \n");
 	else
-		fprintf("pop1 Failed!");
+		printf("pop1 Failed! \n");
 	
 	if (isPopOrder(ipush, pop2, nLength) == true)
-		fprintf("pop2 Success!");
+		printf("pop2 Success! \n");
 	else
-		fprintf("pop2 Failed!");
+		printf("pop2 Failed! \n");
 	
 	return 0;
 }
