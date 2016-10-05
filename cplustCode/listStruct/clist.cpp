@@ -47,15 +47,30 @@ void RemoveNode(ListNode** pHead, int value){
 	}
 }
 
-ListNode* ReverseList(ListNode* pHead){
+ListNode* ReverseList_recursion(ListNode* pHead){
 	if(pHead == NULL || pHead->m_pNext ==NULL){
 		return pHead;
 	}else{
-		ListNode* newHead = ReverseList(pHead->m_pNext);
-		pHead->m_pNext->m_pNext = pHead;
+		ListNode* newHead = ReverseList_recursion(pHead->m_pNext);
+		pHead->m_pNext->m_pNext = pHead;  // 有倒数第二个才会执行这里
 		pHead->m_pNext = NULL;
 		return newHead;
 	}
+}
+
+ListNode* ReverseList(ListNode* pHead){
+	ListNode* pReverseHead = NULL;
+	ListNode* pNode = pHead;
+	ListNode* pPreV = NULL;
+	while(pNode != NULL){
+		ListNode* pNext = pNode->m_pNext;
+		if (pNext == NULL)
+			pReverseHead = pNode;
+		pNode->m_pNext = pPreV;
+		pPreV = pNode;
+		pNode = pNext;
+	}
+	return pReverseHead;
 }
 
 void printList(ListNode* pHead){
@@ -97,17 +112,19 @@ void PrintListReversingly_recursively(ListNode* pHead){
 
 int main(){
 	ListNode* test = new ListNode();
-	test->m_nValue = 0;
-	int numOfNodeAdd = 10;
+	test->m_nValue = 99;
+	int numOfNodeAdd = 8;
 	for(int i = 1; i <= numOfNodeAdd ; ++i){
 		AddToTail(&test, i);	
 	}
 //	AddToTail(&test, 5);	
 //	AddToTail(&test, 6);
 //	AddToTail(&test, 7);
+//	ListNode* test2 = NULL;
 	printList(test);
-	test = ReverseList(test);
-	printList(test);
+	ListNode* rTest = NULL;
+	rTest = ReverseList(test);
+	printList(rTest);
 //	PrintListReversingly(test);
 //	PrintListReversingly_recursively(test);
 	printf("\n");
