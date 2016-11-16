@@ -17,5 +17,5 @@ This is some coding in python and C++.
 	- some coding in algorithms    
 - cplustCode       
 	- some learning in data structure, e.g, list, tree, graph 
-- ml_in_action
-	- some learning in ML with python  
+- ml\_in\_action
+	- some learning in ML with python 
